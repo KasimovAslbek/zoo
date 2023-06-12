@@ -23,7 +23,7 @@ function Navbar({ darkMode, setDarkMode }) {
   return (
     <div className='dark:bg-gray-800' >
     
-    <div className='mx-2.5 sm:mx-5   md:max-w-2xl lg:max-w-4xl  xl:max-w-6xl 2xl:max-w-screen-2xl md:mx-auto flex justify-between items-center py-6 '>
+    <div className='mx-2.5 sm:mx-5 2xl:px-8   md:max-w-2xl lg:max-w-4xl  xl:max-w-6xl 2xl:max-w-screen-2xl md:mx-auto flex justify-between items-center py-6 '>
         <img className='dark:hidden' src={logoLight} alt="" />
         <img className='hidden dark:block' src={logoDark} alt="" />
         <div className='hidden md:block'>
