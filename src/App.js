@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Works from "./components/Works";
+import Mission from "./components/Mission";
+import Pets from "./components/Pets";
+import Paymnet from "./components/Paymnet";
+import Testimonials from "./components/Testimonials";
+import Map from "./components/Map";
+import Footer from "./components/Footer";
+
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App font-roboto dark:bg-gray-900 overflow-hidden">
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Hero/>
+        <Works darkMode={darkMode} />
+        <Mission/>
+        <Pets darkMode={darkMode}/>
+        <Paymnet/>
+        <Testimonials darkMode={darkMode}/>
+        <Map/>
+        <Footer/>
     </div>
   );
 }
