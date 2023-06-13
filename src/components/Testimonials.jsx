@@ -81,7 +81,7 @@ function Testimonials({darkMode}) {
       >
         {animals.map((animal, index) => (
                     <SwiperSlide key={index}  >
-                      <div className='  shadow-lg rounded-md mb-7 sm:min-h-[320px] dark:bg-gray-700 ' >
+                      <div className='  shadow-lg rounded-md mb-7 sm:min-h-[320px] dark:bg-gray-700 mx-3 ' >
                         <div className=''>
                           <img className='mx-auto pt-12 pb-4' src={animal.source} alt="" />
                           <p className='text-center text-xl mb-4 text-gray-700 font-black dark:text-white'>{animal.name}</p>
