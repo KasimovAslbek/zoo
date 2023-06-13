@@ -46,7 +46,11 @@ function Swip() {
         }
         
       };
+      const [activeSlide, setSlideIndex] = useState(1);
 
+      const handleSlide = (swiper) => {
+        setSlideIndex(swiper.realIndex);
+      };
 
 
 
@@ -103,6 +107,8 @@ function Swip() {
               },
            }}
         className="mySwiper text-gray-500"
+        onSlideChange={handleSlide}
+
       >
         {data.map((card, index) => (
                     <SwiperSlide key={card.id}  className='custom'  >
@@ -134,14 +140,14 @@ function Swip() {
         <img className='w-full object-cover h-full' src={line} alt="" />
         </div>
         <div className='xl:absolute -bottom-20 lg:left-[67%] xl:left-0 xl:w-[45%]  2xl:w-[60%] 3xl:w-2/3 sm:ml-[40%] md:ml-[55%]  lg:ml-[70%] xl:ml-[70%] mt-6 '>
-          <p className='text-2xl mb-2.5 text-white font-black pl-40'>0{activeIndex + 1}/<span className='text-sm text-gray-300'>{data.length.toString().padStart(2, '0')}</span></p>
+          <p className='text-2xl mb-2.5 text-white font-black pl-40'>0{activeSlide + 1}/<span className='text-sm text-gray-300'>{data.length.toString().padStart(2, '0')}</span></p>
           <svg className='hidden sm:block' width="245" height="10" viewBox="0 0 245 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="3" width="245" height="5" className="fill-[#BDBDBD] opacity-57 -ml-10" />
-          <rect x={2 + (activeIndex * 30)} width="30" height="10" className="fill-white " />
+          <rect x={2 + (activeSlide * 30)} width="30" height="10" className="fill-white " />
         </svg>
         <svg className='sm:hidden ml-36' width="140" height="10" viewBox="0 0 245 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="3" width="140" height="5" className="fill-[#BDBDBD] opacity-57 -ml-10" />
-          <rect x={2 + (activeIndex * 17)} width="15" height="10" className="fill-white" />
+          <rect x={2 + (activeSlide * 17)} width="15" height="10" className="fill-white" />
         </svg>
         </div>
     </div>
